@@ -1,0 +1,13 @@
+{
+  "content_scripts": [
+    {
+      "matches": ["https://www.property24.com/to-rent/*"],
+      "js": ["script.js"]
+    }
+  ],
+  "description": "Collect the name, agency and mobile number of the agent(s) on Property24",
+  "manifest_version": 3,
+  "name": "Property24 Agent Scraper",
+  "permissions": ["activeTab", "scripting"],
+  "version": "1.0.0"
+}
