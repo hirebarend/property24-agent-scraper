@@ -4,7 +4,7 @@ console.log(
     : ""
 );
 
-const observer = new MutationObserver(async (mutations) => {
+const interval = setInterval(async () => {
   const agency = document.querySelector(
     "#p24_listingAgency .p24_listingCard .p24_agencyLogoName span"
   )
@@ -52,16 +52,13 @@ const observer = new MutationObserver(async (mutations) => {
           ],
         }),
         headers: {
-          Authorization: `Bearer <YOUR_SECRET_API_TOKEN>`,
+          Authorization: `Bearer <TOKEN>`,
           "Content-Type": "application/json",
         },
         method: "POST",
       });
     }
-  }
-});
 
-observer.observe(document.body, {
-  childList: true,
-  subtree: true,
-});
+    clearInterval(interval);
+  }
+}, 1000);
